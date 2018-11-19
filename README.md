@@ -1,1 +1,1 @@
-# Algorithm-Project-Group-6
+#  Group Member: Choi Piljun, Choi JaeJun, Zhurkabayev Ruslan
