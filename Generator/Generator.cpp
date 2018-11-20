@@ -24,7 +24,7 @@ vector<vector<int> >finalBoard;
 // This funciton initializes blankBoard with the user input
 // and returns number of cells for the calculation of the final number
 int setup() {
-	ifstream infile("input.txt");
+	ifstream infile("input.txt");//Input the user input file 'input.txt'
 	totalNumberOfCells = 0;
 	infile >> width >> height;
 	for (int i = 0; i < width + 2; ++i) {
@@ -63,7 +63,7 @@ int setup() {
 // This funcion displays final finalBoard
 void displayFinalBoard() {
 	cout << endl;
-	ofstream outfile("output.txt");
+	ofstream outfile("output.txt");//Creates a file to input the generated puzzle data
 	cout << "GENERATED BOARD:" << endl;
 	outfile << width << " " << height << endl;
 	for (int i = 0; i < width; ++i) {
