@@ -18,10 +18,9 @@ void displayFinalBoard() {
 	ofstream outfile("solve.txt");
 	cout << "Board(solve):" << endl;
 	outfile << width << " " << height << endl;
-	cout << "  ";
 	for (int i = 1; i < width + 1; ++i) {
 		for (int j = 1; j < height + 1; ++j) {
-			cout << board[i][j] << setw(4);
+			cout << setw(5) << board[i][j];
 			outfile << board[i][j] << " ";
 		}
 		cout << endl;

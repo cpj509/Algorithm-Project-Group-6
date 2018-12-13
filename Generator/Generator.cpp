@@ -79,15 +79,14 @@ void outputBoard() {
 	ofstream outfile("output.txt");
 	outfile << height << " " << width << endl;
 	cout << "Board(generate):" << endl;
-	cout << "  ";
 	for (int i = 0; i < height; ++i) {
 		for (int j = 0; j < width; ++j) {
 			if (board[i][j] / 10 > 0 || board[i][j] < 0) {
-				cout << board[i][j] << setw(4);
+				cout << setw(5) << board[i][j];
 				outfile << board[i][j] << " ";
 			}
 			else {
-				cout << board[i][j] << setw(4);
+				cout << setw(5) << board[i][j];
 				outfile << board[i][j] << " ";
 			}
 		}
