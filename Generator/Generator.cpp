@@ -866,11 +866,15 @@ int main() {
 	int attempt = 1;
 	readInput();
 	while (true) {
+		if(attempt > 10000){
+			cerr << "Unable to create puzzle." << endl;
+			exit(1);
+		}
 		initStartAndEndCells();
 		connectStartToEnd();
 		if (findFinalPath()) {
 			fillBoard();
-			//cout<<"Attempt #"<<attempt<<" successful"<<endl;
+			cout<<"Attempt #"<<attempt<<" successful"<<endl;
 			cutHints();
 			outputBoard();
 			break;
