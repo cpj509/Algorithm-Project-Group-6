@@ -20,7 +20,12 @@ void displayFinalBoard() {
 	outfile << width << " " << height << endl;
 	for (int i = 1; i < width + 1; ++i) {
 		for (int j = 1; j < height + 1; ++j) {
-			cout << setw(5) << board[i][j];
+			if (board[i][j] == 0) {
+				cout << setw(5) << " ";
+			}
+			else {
+				cout << setw(5) << board[i][j];
+			}
 			outfile << board[i][j] << " ";
 		}
 		cout << endl;
