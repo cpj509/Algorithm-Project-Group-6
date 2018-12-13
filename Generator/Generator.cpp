@@ -71,28 +71,49 @@ void initStartAndEndCells() {
 	}
 	board[startI][startJ] = 1;
 	board[finalI][finalJ] = totalNumberOfCells;
-	cout << "START: " << "(" << startI + 1 << ", " << startJ + 1 << ")" << endl;
-	cout << "END: " << "(" << finalI + 1 << ", " << finalJ + 1 << ")" << endl;
+	/*cout << "START: " << "(" << startI + 1 << ", " << startJ + 1 << ")" << endl;
+	cout << "END: " << "(" << finalI + 1 << ", " << finalJ + 1 << ")" << endl;*/
 }
 
 void outputBoard() {
 	ofstream outfile("output.txt");
+	int startx, starty, endx, endy, checkend;
 	outfile << height << " " << width << endl;
+	checkend = height * width;
+	for (int i = 0; i < height; ++i) {
+		for (int j = 0; j < width; ++j) {
+			if (board[i][j] == 0) {
+				checkend--;
+			}
+		}
+	}
 	cout << "Board(generate):" << endl;
 	for (int i = 0; i < height; ++i) {
 		for (int j = 0; j < width; ++j) {
-			if (board[i][j] / 10 > 0 || board[i][j] < 0) {
+			/*if (board[i][j] / 10 > 0 || board[i][j] < 0) {
 				cout << setw(5) << board[i][j];
 				outfile << board[i][j] << " ";
 			}
 			else {
 				cout << setw(5) << board[i][j];
 				outfile << board[i][j] << " ";
+			}*/
+			if (board[i][j] == 1) {
+				startx = i;
+				starty = j;
 			}
+			if (board[i][j] == checkend) {
+				endx = i;
+				endy = j;
+			}
+			cout << setw(5) << board[i][j];
+			outfile << board[i][j] << " ";
 		}
 		cout << endl;
 		outfile << endl;
 	}
+	cout << "START: " << "(" << startx << ", " << starty << ")" << endl;
+	cout << "END: " << "(" << endx << ", " << endy << ")" << endl;
 }
 
 bool boardFilled() {
