@@ -99,12 +99,12 @@ void outputBoard() {
 				outfile << board[i][j] << " ";
 			}*/
 			if (board[i][j] == 1) {
-				startx = i;
-				starty = j;
+				startx = j;
+				starty = i;
 			}
 			if (board[i][j] == checkend) {
-				endx = i;
-				endy = j;
+				endx = j;
+				endy = i;
 			}
 			cout << setw(5) << board[i][j];
 			outfile << board[i][j] << " ";
